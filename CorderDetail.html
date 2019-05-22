@@ -16,7 +16,7 @@
             <img class="order_img" :src="cOrderDetail.product_image | filterImg" alt="">
             <div class="order_wrap">
                 <p>{{cOrderDetail.product_name}}</p>
-                <p>{{cOrderDetail.qty}}个</p>
+                <p>{{cOrderDetail.qty.toString().replace(/-/g, "")}}个</p>
             </div>
 
             <div class="order_time">
@@ -36,11 +36,11 @@
                 <ul class="uu_time">
                     <li>
                         <span>出入库状态</span>
-                        <span>{{cOrderDetail.status == 1 ? '未入库' : '已入库'}}</span>
+                        <span>{{cOrderDetail.status == 1 ? '未入库' : cOrderDetail.status == 2 ?'已入库':'已出库'}}</span>
                     </li>
                     <li>
                         <span>库存数量</span>
-                        <span>{{cOrderDetail.qty}}</span>
+                        <span>{{cOrderDetail.stock}}</span>
                     </li>
                 </ul>
             </div>

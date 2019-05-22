@@ -9,34 +9,27 @@
     <link rel="stylesheet" href="css/CorderDetail.css">
     <link rel="stylesheet" href="css/base.css">
 </head>
-<style>
-.order_wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-</style>
+
 <body>
     <div id="app" v-cloak>
         <div class="order">
-            <img class="order_img" src="img/timg.jpg" alt="">
+            <img class="order_img" :src="cOrderDetail.product_image | filterImg" alt="">
             <div class="order_wrap">
-                <div>
-                    <p>采购商品名</p>
-                    <p>241个</p>
-                </div>
-                <!-- <span class="P_btn">入库</span> -->
+                <p>{{cOrderDetail.product_name}}</p>
+                <p>{{cOrderDetail.qty.toString().replace(/-/g, "")}}个</p>
             </div>
 
             <div class="order_time">
                 <ul class="uu_time">
                     <li>
-                        <span>送货时间</span>
-                        <span>2019-03-04 21:21</span>
+                        <span>{{time}}</span>
+                        <span v-if="current==2">{{cOrderDetail.in_system_at}}</span>
+                        <span v-if="current==3">{{cOrderDetail.out_system_at}}</span>
                     </li>
                     <li>
-                        <span>备注</span>
-                        <span>泡沫包装</span>
+                        <span>{{title}}</span>
+                        <span v-if="current==2">{{cOrderDetail.remarks}}</span>
+                        <span v-if="current==3">{{cOrderDetail.order_sn}}</span>
                     </li>
                 </ul>
             </div>
@@ -45,11 +38,11 @@
                 <ul class="uu_time">
                     <li>
                         <span>出入库状态</span>
-                        <span>入库</span>
+                        <span>{{cOrderDetail.status == 1 ? '未入库' : cOrderDetail.status == 2 ?'已入库':'已出库'}}</span>
                     </li>
                     <li>
                         <span>库存数量</span>
-                        <span>1122</span>
+                        <span>{{cOrderDetail.stock}}</span>
                     </li>
                 </ul>
             </div>
@@ -60,4 +53,5 @@
 </html>
 <script src="js/jquery.min.js"></script>
 <script src="js/vue.js"></script>
-<script src="js/CorderDetail.js"></script>
+<script src="js/api.js"></script>
+<script src="js/KorderDetail.js"></script>

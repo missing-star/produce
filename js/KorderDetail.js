@@ -1,7 +1,10 @@
 var xm = new Vue({
     el: "#app",
     data: {
-        cOrderDetail: {}
+        cOrderDetail: {},
+        time: "",
+        title: '',
+        current: '',
     },
     methods: {
         getCorderDetail(id) {
@@ -18,7 +21,14 @@ var xm = new Vue({
     },
     created() {
         this.getCorderDetail(getUrlKey('id'));
-
-        
-    },
+        this.current = getUrlKey('type')
+        if (getUrlKey("type") == 2) {
+            this.title = "备注"
+            this.time = "入库时间"
+        } else if (getUrlKey("type") == 3) {
+            $('title').html('入库记录');
+            this.time = "出库时间"
+            this.title = "产品编号"
+        }
+    }
 });
