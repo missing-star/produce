@@ -28,7 +28,8 @@
                         </div>
                     </div>
                     <!-- 为所有订单或库存时展示操作按钮 -->
-                    <span v-if="currentType == 1 || currentType == 4" class="P_detail" @click="detail(item.id,item.qty)">{{btn}}</span>
+                    <span v-if="currentType == 1 || currentType == 4" class="P_detail"
+                        @click="detail(item.id,item.qty,item.product_name)">{{btn}}</span>
                 </div>
             </div>
         </div>

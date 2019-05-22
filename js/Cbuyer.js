@@ -4,7 +4,8 @@ var xm = new Vue({
         avter: 'img/upload.png',
         title: '',
         number: '',
-        deliveryTime: ''
+        deliveryTime: '',
+        products: [],
     },
     methods: {
         uploadEvent() {
@@ -48,20 +49,20 @@ var xm = new Vue({
             }
             // 上传采购记录
             $.post(api + '/api/purchase/creOrder', {
-                    product_name: this.title,
-                    // 商品数量
-                    qty: this.number,
-                    product_image: this.avter,
-                    delivery_at: this.deliveryTime,
-                    token: sessionStorage.getItem('token')
-                }, function (data) {
-                    toast(data.msg);
-                    if (data.code == 1) {
-                        setTimeout(() => {
-                            history.go(-1);
-                        }, 500);
-                    }
-                }, 'json')
+                product_name: this.title,
+                // 商品数量
+                qty: this.number,
+                product_image: this.avter,
+                delivery_at: this.deliveryTime,
+                token: sessionStorage.getItem('token')
+            }, function (data) {
+                toast(data.msg);
+                if (data.code == 1) {
+                    setTimeout(() => {
+                        history.go(-1);
+                    }, 500);
+                }
+            }, 'json')
                 .fail(function (err) {
                     toast('服务器异常!');
                 });
@@ -91,7 +92,7 @@ var xm = new Vue({
                 title: "产品名称",
                 cols: [{
                     textAlign: 'center',
-                    values: ['iPhone 4', 'iPhone 4S', 'iPhone 5', 'iPhone 5S', 'iPhone 6', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+                    values: this.products,
                 }],
                 onChange: (res) => {
                     if (res.value) {
@@ -100,6 +101,23 @@ var xm = new Vue({
                 }
             });
         });
+
+
+
+        $.post(api + '/api/purchase/allProducts', {
+
+        }, (data) => {
+            // toast(data.msg);
+            console.log(data.data)
+            if (data.code == 1) {
+                for (var i = 0; i < data.data.length; i++) {
+                    this.products.push(data.data[i].product_name)
+                }
+            }
+        }, 'json')
+            .fail((err) => {
+
+            })
     }
 });
 
