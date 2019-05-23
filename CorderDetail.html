@@ -16,7 +16,7 @@
             <img class="order_img" :src="cOrderDetail.product_image | filterImg" alt="">
             <div class="order_wrap">
                 <p>{{cOrderDetail.product_name}}</p>
-                <p>{{cOrderDetail.qty.toString().replace(/-/g, "")}}个</p>
+                <p>{{cOrderDetail.qty}}个</p>
             </div>
 
             <div class="order_time">

@@ -1,9 +1,6 @@
 .banner {
     line-height: 0;
     padding-top: 45px;
-    /* display: flex;
-    flex-flow: wrap;
-    justify-content: space-around; */
 }
 
 .banner img {
