@@ -84,7 +84,7 @@ var xm = new Vue({
                 })(),
                 onChange: (res) => {
                     this.deliveryTime = res.value[0] + '-' + res.value[1] +
-                        ' ' + res.value[2] + ':' + res.value[3] + ':' + res.value[4];
+                        '-' + res.value[2] + ' ' + res.value[3] + ':' + res.value[4];
                 }
             });
             // 下拉列表组件
