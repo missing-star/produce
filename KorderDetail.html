@@ -15,8 +15,11 @@
         <div class="order">
             <img class="order_img" :src="cOrderDetail.product_image | filterImg" alt="">
             <div class="order_wrap">
-                <p>{{cOrderDetail.product_name}}</p>
-                <p>{{cOrderDetail.qty.toString().replace(/-/g, "")}}个</p>
+                <div>
+                    <p>{{cOrderDetail.product_name}}</p>
+                    <p>{{cOrderDetail.qty.toString().replace(/-/g, "")}}个</p>
+                </div>
+                <span class="pointer" @click="open" v-if="current==3">打印标签</span>
             </div>
 
             <div class="order_time">
@@ -45,6 +48,19 @@
                         <span>{{cOrderDetail.stock}}</span>
                     </li>
                 </ul>
+            </div>
+        </div>
+
+        <div class="shade" v-show="isshade">
+            <div class="tag">
+                <div class="tag_wrap" style="text-align: left;">
+                    <p>打印步骤</p>
+                    <p>选择条码->计数器;</p>
+                    <p>起始值：{{cOrderDetail.start==null?'1':cOrderDetail.start}}</p>
+                    <p>字首：http://caigou.pzhkj.cn/api/stock/getOrderInfo?order_id={{orderId}}&a=</p>
+                    <p>字尾：end</p>
+                </div>
+                <span class="tag_btn" @click="close">确定</span>
             </div>
         </div>
     </div>

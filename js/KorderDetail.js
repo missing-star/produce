@@ -1,10 +1,12 @@
 var xm = new Vue({
     el: "#app",
     data: {
+        isshade: false,
         cOrderDetail: {},
         time: "",
         title: '',
         current: '',
+        orderId: '',
     },
     methods: {
         getCorderDetail(id) {
@@ -17,9 +19,16 @@ var xm = new Vue({
                 .fail((err) => {
                     toast('服务器异常');
                 });
+        },
+        open() {
+            this.isshade = true
+        },
+        close() {
+            this.isshade = false
         }
     },
     created() {
+        this.orderId = getUrlKey('id')
         this.getCorderDetail(getUrlKey('id'));
         this.current = getUrlKey('type')
         if (getUrlKey("type") == 2) {
