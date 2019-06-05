@@ -2,6 +2,7 @@ var xm = new Vue({
     el: "#app",
     data: {
         isshade: false,
+        isbox: false,
         cOrderDetail: {},
         time: "",
         title: '',
@@ -26,24 +27,26 @@ var xm = new Vue({
         close() {
             this.isshade = false
         },
-        goOut(){
-            window.location.href="out-order.html"
+        // 入库
+        goOut() {
+            window.location.href = "out-order.html"
+        },
+        // 打印标签
+        tagChange() {
+            this.isshade = true;
+            this.isbox = true;
+        },
+        confireChange() {
+
+        },
+        // 反馈
+        gofeedback() {
+            window.location.href = "feedback.html"
         }
     },
     created() {
         this.orderId = getUrlKey('id')
         this.getCorderDetail(getUrlKey('id'));
         this.current = getUrlKey('type')
-        if (getUrlKey("type") == 2) {
-            this.title = "备注"
-            this.time = "入库时间"
-            $("#Torder").attr("disabled","disabled")
-
-        } else if (getUrlKey("type") == 3) {
-            $('title').html('入库记录');
-            this.time = "出库时间"
-            this.title = "产品编号"
-            $("#Torder").attr("disabled","disabled")
-        }
     }
 });

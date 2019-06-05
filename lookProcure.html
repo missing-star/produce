@@ -12,27 +12,36 @@
 
 <body>
     <div id="app" v-cloak>
+        <nav class="nav-bar-wrapper">
+            <img src="img/zuo.png" class="back-icon">
+            <p class="nav-bar-title">{{msg}}</p>
+        </nav>
+
+        <div class="search">
+            <div class="search_wrap">
+                <input type="text" placeholder="搜索订单编号或商品名称">
+                <img src="img/sou.png" alt="">
+            </div>
+        </div>
+
         <div class="index_main">
             <div class="procure_list" v-for="(item,index) in procureList" @click="lookPetail(item.id)">
                 <div class="procure_top">
-                    <span v-if="currentType != 4">{{time}}</span>
-                    <span v-if="currentType == 1">{{item.delivery_at}}</span>
-                    <span v-if="currentType == 2">{{item.in_system_at}}</span>
-                    <span v-if="currentType == 3">{{item.out_system_at}}</span>
-                    <span v-if="currentType == 4">{{item.delivery_at}}</span>
+                    <span>订单编号</span>
+                    <span>{{item.order_sn}}</span>
                 </div>
                 <hr>
                 <div class="procure_bot">
                     <div class="procure_bot_mid">
-                        <img class="P_img" :src="item.product_image | filterImg" alt="">
                         <div class="procure_num">
                             <p>名称：{{item.product_name}}</p>
                             <p>数量：{{item.qty.toString().replace(/-/g, "")}}个</p>
                         </div>
                     </div>
+                    <!-- <span class="sp-btn">入库</span> -->
                     <!-- 为所有订单或库存时展示操作按钮 -->
-                    <span v-if="currentType == 1 || currentType == 4" class="P_detail"
-                        @click="detail(item.id,item.qty,item.product_name)">{{btn}}</span>
+                    <span v-if="currentType == 1" class="P_detail"
+                        @click="detail(item.id,item.qty,item.product_name)">待入库</span>
                 </div>
             </div>
 

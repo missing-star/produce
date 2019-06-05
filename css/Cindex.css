@@ -1,5 +1,5 @@
 .index_main {
-    padding: 0.1rem 0.1rem 0.56rem;
+    padding: 0.86rem 0.1rem 0.56rem;
 }
 
 .procure_list {
@@ -37,7 +37,7 @@ hr {
 }
 
 .procure_num {
-    font-size: 0.12rem;
+    font-size: 0.14rem;
     line-height: 0.22rem;
 }
 
@@ -50,15 +50,9 @@ hr {
 }
 
 .P_detail {
-    display: inline-block;
     font-size: 0.12rem;
-    width: 0.34rem;
-    height: 0.2rem;
-    border: 1px solid rgba(191, 191, 191, 1);
-    border-radius: 0.05rem;
-    text-align: center;
     line-height: 0.2rem;
-    color: rgba(134, 134, 134, 1);
+    color: #FF4545;
 }
 
 
@@ -93,4 +87,75 @@ hr {
     position: fixed;
     bottom: 4%;
     right: 3%;
+}
+
+
+
+
+/* 修改 */
+.nav {
+    width: 100%;
+    height: 0.35rem;
+    position: fixed;
+    /* top: 0; */
+    background: white;
+}
+
+.nav_uu {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.nav_uu li {
+    width: 50%;
+    height: 100%;
+    font-size: 0.15rem;
+    line-height: 0.35rem;
+    border-bottom: 2px solid #F2F2F2;
+}
+
+.nav_uu li span {
+    display: inline-block;
+    height: 98%;
+    color: #868686;
+    font-size: 0.15rem;
+}
+
+.active {
+    color: #4C8BCC !important;
+    border-bottom: 2px solid #4C8BCC;
+}
+
+.search {
+    width: 100%;
+    font-size: 0.14rem;
+    position: fixed;
+    top: 0.35rem;
+    background: #efefef;
+}
+
+.search_wrap {
+    padding: 0.09rem 0.26rem 0.07rem 0.26rem;
+    position: relative;
+}
+
+.search input {
+    width: 88%;
+    height: 0.33rem;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 5px 0px rgba(158, 158, 158, 0.26);
+    border-radius: 0.18rem;
+    outline: none;
+    border: 0;
+    padding-left: 12%;
+}
+
+.search img {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    width: 0.18rem;
+    height: 0.18rem;
 }

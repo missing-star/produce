@@ -12,26 +12,92 @@
 
 <body>
     <div id="app" v-cloak>
+        <div class="nav">
+            <ul class="nav_uu">
+                <li>
+                    <span @click="tab(0)" :class="{active:cur==0}">待采购</span>
+                </li>
+                <li>
+                    <span @click="tab(1)" :class="{active:cur==1}">待处理</span>
+                </li>
+                <li>
+                    <span @click="tab(2)" :class="{active:cur==2}">待完成</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="search">
+            <div class="search_wrap">
+                <input type="text" placeholder="搜索订单编号或商品名称">
+                <img src="img/sou.png" alt="">
+            </div>
+        </div>
+
         <div class="index_main">
-            <div class="procure_list" v-for="(item,index) in procureList">
+            <div class="procure_list" v-for="(item,index) in procureList" @click="produceDetail(item.id)">
                 <div class="procure_top">
-                    <span>送货时间</span>
-                    <span>{{item.delivery_at}}</span>
+                    <span>订单编号</span>
+                    <span>{{item.order_sn}}</span>
                 </div>
                 <hr>
                 <div class="procure_bot">
                     <div class="procure_bot_mid">
-                        <img class="P_img" :src="item.product_image | filterImg" alt="">
                         <div class="procure_num">
                             <p>名称：{{item.product_name}}</p>
                             <p>数量：{{item.qty}}个</p>
                         </div>
                     </div>
-                    <span class="P_detail" @click="produceDetail(item.id)">详情</span>
+                    <span class="P_detail">{{title}}</span>
                 </div>
             </div>
-
-            <img class="add_img" @click="addProduce" src="img/添加.png" alt="" v-if="procureList!=''">
+            <div class="procure_list" v-for="(item,index) in procureList" @click="produceDetail(item.id)">
+                <div class="procure_top">
+                    <span>订单编号</span>
+                    <span>{{item.order_sn}}</span>
+                </div>
+                <hr>
+                <div class="procure_bot">
+                    <div class="procure_bot_mid">
+                        <div class="procure_num">
+                            <p>名称：{{item.product_name}}</p>
+                            <p>数量：{{item.qty}}个</p>
+                        </div>
+                    </div>
+                    <span class="P_detail">{{title}}</span>
+                </div>
+            </div>
+            <div class="procure_list" v-for="(item,index) in procureList" @click="produceDetail(item.id)">
+                <div class="procure_top">
+                    <span>订单编号</span>
+                    <span>{{item.order_sn}}</span>
+                </div>
+                <hr>
+                <div class="procure_bot">
+                    <div class="procure_bot_mid">
+                        <div class="procure_num">
+                            <p>名称：{{item.product_name}}</p>
+                            <p>数量：{{item.qty}}个</p>
+                        </div>
+                    </div>
+                    <span class="P_detail">{{title}}</span>
+                </div>
+            </div>
+            <div class="procure_list" v-for="(item,index) in procureList" @click="produceDetail(item.id)">
+                <div class="procure_top">
+                    <span>订单编号</span>
+                    <span>{{item.order_sn}}</span>
+                </div>
+                <hr>
+                <div class="procure_bot">
+                    <div class="procure_bot_mid">
+                        <div class="procure_num">
+                            <p>名称：{{item.product_name}}</p>
+                            <p>数量：{{item.qty}}个</p>
+                        </div>
+                    </div>
+                    <span class="P_detail">{{title}}</span>
+                </div>
+            </div>
         </div>
 
 

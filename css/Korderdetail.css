@@ -43,7 +43,7 @@
 .uu_time li {
     display: flex;
     justify-content: space-between;
-    padding: 0.14rem 0.08rem 0.08rem 0.17rem;
+    padding: 0.14rem 0.1rem 0.08rem 0.17rem;
     border: 1px solid #F2F2F2;
     line-height: 0.16rem;
 }
@@ -184,4 +184,17 @@ textarea {
     text-align: center;
     line-height: 0.45rem;
     margin-top: 0.17rem;
+}
+
+.sp-btn {
+    display: block;
+    width: 97%;
+    height: 0.45rem;
+    background: rgba(76, 139, 204, 1);
+    border-radius: 4px;
+    font-size: 0.15rem;
+    text-align: center;
+    line-height: 0.45rem;
+    color: rgba(255, 255, 255, 1);
+    margin: 0.28rem auto 0;
 }

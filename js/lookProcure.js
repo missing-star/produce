@@ -8,6 +8,7 @@ var xm = new Vue({
         time: '',
         currentType: '',
         id: '',
+        msg: '',
     },
     methods: {
         detail(id, number, name) {
@@ -35,9 +36,11 @@ var xm = new Vue({
             }
         },
         lookPetail(id) {
-            if (getUrlKey("id") == 2 || getUrlKey("id") == 3) {
-                var type = getUrlKey("id")
+            var type = getUrlKey("id")
+            if (getUrlKey("id") == 2 || getUrlKey("id") == 3 || getUrlKey("id") == 4) {
                 window.location.href = `KorderDetail.html?id=${id}&type=${type}`
+            } else if (getUrlKey("id") == 1) {
+                window.location.href = `make-detail.html?id=${id}&type=${type}`
             }
         },
         // 获取所有订单列表
@@ -73,19 +76,13 @@ var xm = new Vue({
         this.currentType = id;
         this.getAllList(id);
         if (getUrlKey("id") == 1) {
-            $('title').html('采购订单');
-            this.btn = "入库"
-            this.time = "送货时间"
+            this.msg = "采购订单"
         } else if (getUrlKey("id") == 2) {
-            $('title').html('入库记录');
-            this.time = "入库时间"
+            this.msg = "入库记录"
         } else if (getUrlKey("id") == 3) {
-            $('title').html('出库记录');
-            this.time = "出库时间"
+            this.msg = "出库记录"
         } else if (getUrlKey("id") == 4) {
-            $('title').html('库存');
-            this.btn = "出库"
-            this.time = "送货时间"
+            this.msg = "库存管理"
         }
     },
 

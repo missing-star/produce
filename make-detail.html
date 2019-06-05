@@ -6,17 +6,20 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>订单详情</title>
-    <link rel="stylesheet" href="css/CorderDetail.css">
+    <link rel="stylesheet" href="css/make-detail.css">
     <link rel="stylesheet" href="css/base.css">
 </head>
 
 <body>
     <div id="app" v-cloak>
+
         <div class="order">
-            <!-- <img class="order_img" :src="cOrderDetail.product_image | filterImg" alt=""> -->
             <div class="order_wrap">
-                <p>{{cOrderDetail.product_name}}</p>
-                <p>{{cOrderDetail.qty}}个</p>
+                <div>
+                    <p>{{cOrderDetail.product_name}}</p>
+                    <p>{{cOrderDetail.qty}}个</p>
+                </div>
+                <span cla>打印标签</span>
             </div>
 
             <div class="order_time">
@@ -34,8 +37,16 @@
                         <span>{{cOrderDetail.delivery_at}}</span>
                     </li>
                     <li>
-                        <span>期望 送货时间</span>
+                        <span>入库时间</span>
                         <span>{{cOrderDetail.delivery_at}}</span>
+                    </li>
+                    <li>
+                        <span>实际到货数量</span>
+                        <span>{{cOrderDetail.delivery_at}}</span>
+                    </li>
+                    <li>
+                        <span>产品标号</span>
+                        <span>WR324345</span>
                     </li>
                 </ul>
             </div>
@@ -43,23 +54,15 @@
             <div class="order_time">
                 <ul class="uu_time">
                     <li>
-                        <span>实际采购数量</span>
-                        <input type="text" placeholder="请输入采购数量">
-                    </li>
-                    <li>
-                        <span>实际送货时间</span>
-                        <input type="text" placeholder="请输入送货时间">
-                    </li>
-                    <li>
                         <div class="buyer_text">
                             <p>备注</p>
-                            <textarea placeholder="请输入备注" name="" id="" cols="30" rows="10"></textarea>
+                            <textarea name="" id="Torder"></textarea>
                         </div>
                     </li>
                 </ul>
             </div>
 
-            <span class="nav-btn">采购</span>
+            <span class="sp-btn" v-if="current == 4" @click="goOut">出库</span>
         </div>
     </div>
 </body>
@@ -68,4 +71,4 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/vue.js"></script>
 <script src="js/api.js"></script>
-<script src="js/CorderDetail.js"></script>
+<script src="js/make-detail.js"></script>

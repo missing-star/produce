@@ -12,6 +12,9 @@
 
 <body>
     <div id="app" v-cloak>
+        <!-- <nav>
+            <img src="" alt="">
+        </nav> -->
         <div class="order">
             <!-- <img class="order_img" :src="cOrderDetail.product_image | filterImg" alt=""> -->
             <div class="order_wrap">
@@ -33,33 +36,28 @@
                         <span>材质</span>
                         <span>{{cOrderDetail.delivery_at}}</span>
                     </li>
-                    <li>
-                        <span>期望 送货时间</span>
-                        <span>{{cOrderDetail.delivery_at}}</span>
-                    </li>
+
                 </ul>
             </div>
 
             <div class="order_time">
                 <ul class="uu_time">
                     <li>
-                        <span>实际采购数量</span>
-                        <input type="text" placeholder="请输入采购数量">
+                        <span>期望送货时间</span>
+                        <span>{{cOrderDetail.delivery_at}}</span>
                     </li>
                     <li>
                         <span>实际送货时间</span>
-                        <input type="text" placeholder="请输入送货时间">
+                        <span>{{cOrderDetail.delivery_at}}</span>
                     </li>
                     <li>
                         <div class="buyer_text">
                             <p>备注</p>
-                            <textarea placeholder="请输入备注" name="" id="" cols="30" rows="10"></textarea>
+                            <p class="pp-text">内容</p>
                         </div>
                     </li>
                 </ul>
             </div>
-
-            <span class="nav-btn">采购</span>
         </div>
     </div>
 </body>

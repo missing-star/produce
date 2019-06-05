@@ -1,0 +1,35 @@
+.order {
+    padding-top: 0.4rem;
+}
+
+.uu_time li {
+    padding: 0.13rem;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 4px;
+    font-size: 0.14rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.uu_time li input {
+    outline: none;
+    border: 0;
+    text-align: right;
+}
+
+.sp-btn {
+    display: block;
+    width: 97%;
+    height: 0.45rem;
+    background: rgba(76, 139, 204, 1);
+    border-radius: 4px;
+    font-size: 0.15rem;
+    text-align: center;
+    line-height: 0.45rem;
+    color: rgba(255, 255, 255, 1);
+    margin: 0.28rem auto 0;
+}
