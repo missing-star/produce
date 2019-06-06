@@ -8,6 +8,9 @@ var xm = new Vue({
         orderId: '',
     },
     methods: {
+        goback() {
+            history.go(-1);
+        },
         getCorderDetail(id) {
             $.post(api + '/api/purchase/getOrderInfo', {
                 order_id: id,
@@ -25,8 +28,8 @@ var xm = new Vue({
         close() {
             this.isshade = false
         },
-        goOut(){
-            window.location.href="out-order.html"
+        goOut() {
+            window.location.href = "out-order.html"
         }
     },
     created() {
@@ -34,12 +37,12 @@ var xm = new Vue({
         this.getCorderDetail(getUrlKey('id'));
         this.current = getUrlKey('type')
         if (getUrlKey("type") == 2) {
-            $("#Torder").attr("disabled","disabled")
-            this.title="入库时间"
+            $("#Torder").attr("disabled", "disabled")
+            this.title = "入库时间"
 
         } else if (getUrlKey("type") == 3) {
-            $("#Torder").attr("disabled","disabled")
-            this.title="出库时间"
+            $("#Torder").attr("disabled", "disabled")
+            this.title = "出库时间"
         }
     }
 });

@@ -11,6 +11,9 @@ var xm = new Vue({
         msg: '',
     },
     methods: {
+        goback() {
+            history.go(-1);
+        },
         detail(id, number, name) {
             console.log(number)
             if (getUrlKey("id") == 1) {

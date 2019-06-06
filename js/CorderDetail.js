@@ -14,11 +14,13 @@ var xm = new Vue({
                 .fail((err) => {
                     toast('服务器异常');
                 });
+        },
+        goback(){
+            history.go(-1);
         }
     },
     created() {
         this.getCorderDetail(getUrlKey('id'));
-
-        
     },
 });
+

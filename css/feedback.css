@@ -1,3 +1,7 @@
+#app {
+    padding-top: 0.42rem;
+}
+
 .order_time {
     width: 100%;
     background: rgba(255, 255, 255, 1);
@@ -67,11 +71,46 @@ textarea {
     margin: 0.28rem auto 0;
 }
 
+.lis-one {
+    position: relative;
+}
+
+.lis-one img {
+    width: 0.11rem;
+    height: 0.06rem;
+    position: absolute;
+    right: 0;
+    top: 34%;
+}
+
 #slect {
     border: 0;
     outline: none;
+    background: white;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    padding-right: 14px;
 }
 
 #slect option {
     border: 0;
+}
+
+option::-ms-expand {
+    display: none;
+}
+
+option {
+    -moz-appearance: none;
+    /* Firefox */
+    -webkit-appearance: none;
+    /* Safari 和 Chrome */
+    appearance: none;
+}
+
+/* --背景色字体颜色--*/
+option:hover {
+    color: #fff;
+    background-color: #1E90FF;
 }

@@ -12,35 +12,31 @@
 
 <body>
     <div id="app" v-cloak>
-        <!-- <nav>
-            <img src="" alt="">
-        </nav> -->
+        <nav class="nav-bar-wrapper">
+            <img src="img/zuo.png" class="back-icon" @click="goback">
+            <p class="nav-bar-title">订单详情</p>
+        </nav>
         <div class="order">
-            <!-- <img class="order_img" :src="cOrderDetail.product_image | filterImg" alt=""> -->
             <div class="order_wrap">
                 <p>{{cOrderDetail.product_name}}</p>
                 <p>{{cOrderDetail.qty}}个</p>
             </div>
 
             <div class="order_time">
-                <ul class="uu_time">
-                    <li>
-                        <span>尺寸</span>
-                        <span>{{cOrderDetail.delivery_at}}</span>
-                    </li>
-                    <li>
-                        <span>颜色</span>
-                        <span>{{cOrderDetail.remarks}}</span>
-                    </li>
-                    <li>
-                        <span>材质</span>
-                        <span>{{cOrderDetail.delivery_at}}</span>
-                    </li>
-
-                </ul>
+                <div class="order_time">
+                    <h4>规格</h4>
+                    <p class="content-p">
+                        110x130cm棉质蓝色空调被13个、
+                        110x130cm棉质蓝色空调被13个、
+                        110x130cm棉质蓝色空调被13个、
+                        110x130cm棉质蓝色空调被13个、
+                        110x130cm棉质蓝色空调被13个。
+                    </p>
+                </div>
             </div>
 
             <div class="order_time">
+                <h4>待处理问题</h4>
                 <ul class="uu_time">
                     <li>
                         <span>期望送货时间</span>
@@ -48,12 +44,12 @@
                     </li>
                     <li>
                         <span>实际送货时间</span>
-                        <span>{{cOrderDetail.delivery_at}}</span>
+                        <span>{{cOrderDetail.remarks}}</span>
                     </li>
                     <li>
                         <div class="buyer_text">
                             <p>备注</p>
-                            <p class="pp-text">内容</p>
+                            <textarea name="" id="Torder"></textarea>
                         </div>
                     </li>
                 </ul>

@@ -12,7 +12,10 @@
 
 <body>
     <div id="app" v-cloak>
-
+        <nav class="nav-bar-wrapper">
+            <img src="img/zuo.png" class="back-icon" @click="goback">
+            <p class="nav-bar-title">订单详情</p>
+        </nav>
         <div class="order">
             <div class="order_wrap">
                 <div>
@@ -55,7 +58,7 @@
                 </ul>
             </div>
 
-            <span class="sp-btn" @click="goOut">入库</span>
+            <span class="sp-btn">入库</span>
             <span class="sp-btn" @click="gofeedback">反馈订单</span>
         </div>
         <!-- 遮罩 -->

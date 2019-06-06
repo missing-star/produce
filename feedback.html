@@ -12,20 +12,26 @@
 
 <body>
     <div id="app" v-cloak>
-
+        <nav class="nav-bar-wrapper">
+            <img src="img/zuo.png" class="back-icon" @click="goback">
+            <p class="nav-bar-title">货品退换</p>
+        </nav>
 
         <div class="order_time">
             <ul class="uu_time">
                 <li>
                     <span>问题类型</span>
-                    <select name="" id="slect">
-                        <option value="">次品退货</option>
-                        <option value="">货品缺少</option>
-                    </select>
+                    <div class="lis-one">
+                        <select name="" id="slect">
+                            <option value="">次品退货</option>
+                            <option value="">货品缺少</option>
+                        </select>
+                        <img src="img/下拉.png" alt="">
+                    </div>
                 </li>
                 <li>
                     <span>退货/缺货数量</span>
-                    <input type="text" placeholder="请输入退货数量">
+                    <input type="text" placeholder="请输入退货/缺货数量">
                 </li>
                 <li>
                     <div class="buyer_text">

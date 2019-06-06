@@ -11,6 +11,9 @@ var xm = new Vue({
         orderId: '',
     },
     methods: {
+        goback() {
+            history.go(-1);
+        },
         getCorderDetail(id) {
             $.post(api + '/api/purchase/getOrderInfo', {
                 order_id: id,

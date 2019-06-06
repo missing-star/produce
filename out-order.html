@@ -13,7 +13,7 @@
 <body>
     <div id="app">
         <nav class="nav-bar-wrapper">
-            <img src="img/zuo.png" class="back-icon">
+            <img src="img/zuo.png" class="back-icon" @click="goback">
             <p class="nav-bar-title">出库</p>
         </nav>
         <div class="order">
@@ -26,7 +26,7 @@
                 </ul>
             </div>
 
-            <span class="sp-btn" v-if="current == 4">确定</span>
+            <span class="sp-btn">确定</span>
         </div>
     </div>
 </body>
