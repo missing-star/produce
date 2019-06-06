@@ -5,7 +5,7 @@ var xm = new Vue({
         procureList: [],
         cur: 0,
         title: '待采购',
-        
+
     },
     methods: {
         addProduce(t) {
@@ -22,23 +22,31 @@ var xm = new Vue({
             }
 
         },
-        getMyList() {
-            $.post(api + '/api/purchase/getOrder', { token: sessionStorage.getItem('token') }, (data) => {
-                this.procureList = data.data;
-            }, 'json');
+        getMyList(id) {
+            $.post(api + '/api/purchase/getOrderByType', {
+                token: sessionStorage.getItem('token'),
+                type: id,
+            },
+                (data) => {
+                    this.procureList = data.data;
+                }, 'json');
         },
         tab(t) {
             this.cur = t
+
             if (t == 0) {
                 this.title = "待采购"
+                this.getMyList(t + 1)
             } else if (t == 1) {
                 this.title = "待处理"
+                this.getMyList(t + 1)
             } else if (t == 2) {
                 this.title = "已完成"
+                this.getMyList(t + 1)
             }
         },
     },
     created() {
-        this.getMyList();
+        this.getMyList(1);
     },
 });

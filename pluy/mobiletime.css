@@ -1,0 +1,231 @@
+input,
+button,
+select,
+textarea {
+    outline: 0;
+    border-radius: 0
+}
+
+a,
+button,
+input,
+optgroup,
+select,
+textarea,
+span,
+div,
+td,
+tr,
+table {
+    -webkit-tap-highlight-color: transparent
+}
+
+input::-webkit-input-placeholder {
+    color: #bcbcbc
+}
+
+input:-moz-placeholder {
+    color: #bcbcbc
+}
+
+input::-moz-placeholder {
+    color: #bcbcbc
+}
+
+input:-ms-input-placeholder {
+    color: #bcbcbc
+}
+
+textarea::-webkit-input-placeholder {
+    color: #bcbcbc
+}
+
+textarea:-moz-placeholder {
+    color: #bcbcbc
+}
+
+textarea::-moz-placeholder {
+    color: #bcbcbc
+}
+
+textarea:-ms-input-placeholder {
+    color: #bcbcbc
+}
+
+body,
+h1,
+p,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0
+}
+
+html,
+body {
+    background-color: #fff !important;
+    touch-action: none
+}
+
+body ::-webkit-scrollbar {
+    display: none
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400
+}
+
+img {
+    display: block;
+    border: 0
+}
+
+a {
+    text-decoration: none
+}
+
+table,
+td {
+    border-collapse: collapse;
+    padding: 5px 0
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 微软雅黑;
+    border-color: transparent;
+    border: #fff solid 0;
+    border-color: transparent;
+    font-size: 10px
+}
+
+ul,
+li {
+    list-style-type: none
+}
+
+button {
+    outline: 0
+}
+
+.clearBoth {
+    clear: both
+}
+
+.screenTimeBox {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: auto;
+    background-color: rgba(0, 0, 0, .3)
+}
+
+.screenTimeBody {
+    position: absolute;
+    bottom: 0;
+    width: 98%;
+    left: 1%;
+    border-top-left-radius: .4rem;
+    border-top-right-radius: .4rem;
+    min-height: 2rem;
+    background: #fff
+}
+
+.screenTimeBody p {
+    text-align: center;
+    font-size: .43rem;
+    color: #333;
+    margin-top: .15rem
+}
+
+.timeScroll {
+    position: relative;
+    width: 100%;
+    overflow: hidden
+}
+
+.dwwo {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ffffff 0%, rgba(245, 245, 245, 0) 52%, rgba(245, 245, 245, 0) 48%, #ffffff 100%);
+    background: -webkit-gradient(linear, left bottom, left top, from(#ffffff), color-stop(0.52, rgba(245, 245, 245, 0)), color-stop(0.48, rgba(245, 245, 245, 0)), to(#ffffff));
+    background: -moz-linear-gradient(#ffffff 0%, rgba(245, 245, 245, 0) 52%, rgba(245, 245, 245, 0) 48%, #ffffff 100%);
+    background: -o-linear-gradient(#ffffff 0%, rgba(245, 245, 245, 0) 52%, rgba(245, 245, 245, 0) 48%, #ffffff 100%)
+}
+
+.timeMean {
+    width: 100%
+}
+
+.timeMean h6 {
+    float: left;
+    line-height: 1rem;
+    height: 1rem;
+    text-align: center;
+    font-size: .375rem
+}
+
+.timeScroll .ulBox {
+    position: relative;
+    float: left;
+    z-index: 10
+}
+
+.ulBox ul {
+    position: relative;
+    z-index: 2
+}
+
+.timeScroll .ulBox li {
+    width: 100%;
+    line-height: 1rem;
+    height: 1rem;
+    text-align: center;
+    font-size: .375rem;
+    color: #373737
+}
+
+.timeScrollBoutton {
+    width: 100%;
+    border-top: 1px solid #bcbcbc;
+    margin-top: .2rem
+}
+
+.timeScrollBoutton button {
+    width: 33.33333333333%;
+    line-height: 1.3rem;
+    font-size: .375rem;
+    color: #333;
+    background: #fff;
+    box-sizing: border-box
+}
+
+.timeScrollBoutton button:nth-child(2) {
+    border-left: 1px solid #bcbcbc;
+    border-right: 1px solid #bcbcbc
+}
+
+.lookTimeLine {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc
+}

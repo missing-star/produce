@@ -8,6 +8,7 @@
     <title>订单详情</title>
     <link rel="stylesheet" href="css/CorderDetail.css">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/jquery-weui.min.css">
 </head>
 
 <body>
@@ -18,19 +19,23 @@
         </nav>
         <div class="order">
             <div class="order_wrap">
-                <p>{{cOrderDetail.product_name}}</p>
-                <p>{{cOrderDetail.qty}}个</p>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img :src="avter" /></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div>
+                    <p>{{cOrderDetail.product_name}}</p>
+                    <p>{{cOrderDetail.qty}}个</p>
+                </div>
             </div>
 
             <div class="order_time">
                 <div class="order_time">
                     <h4>规格</h4>
                     <p class="content-p">
-                        110x130cm棉质蓝色空调被13个、
-                        110x130cm棉质蓝色空调被13个、
-                        110x130cm棉质蓝色空调被13个、
-                        110x130cm棉质蓝色空调被13个、
-                        110x130cm棉质蓝色空调被13个。
+                        {{cOrderDetail.spec_info==null?'暂无':cOrderDetail.spec_info}}
                     </p>
                 </div>
             </div>
@@ -40,16 +45,16 @@
                 <ul class="uu_time">
                     <li>
                         <span>期望送货时间</span>
-                        <span>{{cOrderDetail.delivery_at}}</span>
+                        <span>{{cOrderDetail.hope_delivery_at}}</span>
                     </li>
                     <li>
                         <span>实际送货时间</span>
-                        <span>{{cOrderDetail.remarks}}</span>
+                        <span>{{cOrderDetail.delivery_at}}</span>
                     </li>
                     <li>
                         <div class="buyer_text">
-                            <p>备注</p>
-                            <textarea name="" id="Torder"></textarea>
+                            <p style="margin-bottom: 0.8rem">备注</p>
+                            <span>{{cOrderDetail.remarks==""?'暂无':cOrderDetail.remarks}}</span>
                         </div>
                     </li>
                 </ul>
@@ -60,6 +65,48 @@
 
 </html>
 <script src="js/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/swiper.min.js"></script>
+<script src="js/weui.min.js"></script>
 <script src="js/vue.js"></script>
 <script src="js/api.js"></script>
-<script src="js/CorderDetail.js"></script>
+
+<script>
+    var xm = new Vue({
+        el: "#app",
+        data: {
+            cOrderDetail: {},
+            avter:''
+        },
+        methods: {
+            goback() {
+                history.go(-1);
+            },
+            getCorderDetail(id) {
+                $.post(api + '/api/purchase/getIsDoneOrderInfo', {
+                    order_id: id,
+                    token: sessionStorage.getItem('token')
+                }, (data) => {
+                    this.cOrderDetail = data.data;
+                    this.avter = `${api}/${data.data.product_image}`
+                }, 'json')
+                    .fail((err) => {
+                        toast('服务器异常');
+                    });
+            },
+        },
+        created() {
+            this.getCorderDetail(getUrlKey('id'));
+        },
+    });
+
+
+    $(".swiper-container").swiper({
+        loop: false,
+        autoplay: 0
+    });
+
+
+
+
+
+</script>
