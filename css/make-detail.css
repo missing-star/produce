@@ -134,6 +134,7 @@
     word-wrap: break-word;
     word-break: normal;
     line-height: 0.2rem;
+    text-align: left;
 }
 
 .tag_btn {
@@ -240,7 +241,7 @@ textarea {
 }
 
 .box {
-    width: 74%;
+    width: 68%;
     height: 1.23rem;
     background: rgba(255, 255, 255, 1);
     box-shadow: 0px 0px 5px 4px rgba(179, 95, 131, 0.23);

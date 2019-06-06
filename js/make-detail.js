@@ -3,6 +3,7 @@ var xm = new Vue({
     data: {
         isshade: false,
         isbox: false,
+        istag: false,
         cOrderDetail: {},
         time: "",
         title: '',
@@ -37,7 +38,8 @@ var xm = new Vue({
             this.isbox = true;
         },
         confireChange() {
-
+            this.isbox = false;
+            this.istag = true;
         },
         // 反馈
         gofeedback() {

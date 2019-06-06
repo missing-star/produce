@@ -36,6 +36,7 @@
                         <div class="procure_num">
                             <p>名称：{{item.product_name}}</p>
                             <p>数量：{{item.qty.toString().replace(/-/g, "")}}个</p>
+                            <p v-if="currentType == 2">入库数量：2000</p>
                         </div>
                     </div>
                     <!-- <span class="sp-btn">入库</span> -->

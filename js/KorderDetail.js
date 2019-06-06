@@ -3,7 +3,6 @@ var xm = new Vue({
     data: {
         isshade: false,
         cOrderDetail: {},
-        time: "",
         title: '',
         current: '',
         orderId: '',
@@ -35,15 +34,12 @@ var xm = new Vue({
         this.getCorderDetail(getUrlKey('id'));
         this.current = getUrlKey('type')
         if (getUrlKey("type") == 2) {
-            this.title = "备注"
-            this.time = "入库时间"
             $("#Torder").attr("disabled","disabled")
+            this.title="入库时间"
 
         } else if (getUrlKey("type") == 3) {
-            $('title').html('入库记录');
-            this.time = "出库时间"
-            this.title = "产品编号"
             $("#Torder").attr("disabled","disabled")
+            this.title="出库时间"
         }
     }
 });

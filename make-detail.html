@@ -19,40 +19,33 @@
                     <p>{{cOrderDetail.product_name}}</p>
                     <p>{{cOrderDetail.qty}}个</p>
                 </div>
-                <span cla>打印标签</span>
+                <span class="tag-btn" @click="tagChange">打印标签</span>
             </div>
 
             <div class="order_time">
+                <div class="order_time">
+                    <h4>规格</h4>
+                    <p class="content-p">
+                        110x130cm棉质蓝色空调被13个、
+                        110x130cm棉质蓝色空调被13个、
+                        110x130cm棉质蓝色空调被13个、
+                        110x130cm棉质蓝色空调被13个、
+                        110x130cm棉质蓝色空调被13个。
+                    </p>
+                </div>
+            </div>
+
+            <div class="order_time">
+                <h4>采购记录</h4>
                 <ul class="uu_time">
                     <li>
-                        <span>尺寸</span>
+                        <span>送货时间</span>
                         <span>{{cOrderDetail.delivery_at}}</span>
                     </li>
                     <li>
-                        <span>颜色</span>
+                        <span>送货数量</span>
                         <span>{{cOrderDetail.remarks}}</span>
                     </li>
-                    <li>
-                        <span>材质</span>
-                        <span>{{cOrderDetail.delivery_at}}</span>
-                    </li>
-                    <li>
-                        <span>入库时间</span>
-                        <span>{{cOrderDetail.delivery_at}}</span>
-                    </li>
-                    <li>
-                        <span>实际到货数量</span>
-                        <span>{{cOrderDetail.delivery_at}}</span>
-                    </li>
-                    <li>
-                        <span>产品标号</span>
-                        <span>WR324345</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="order_time">
-                <ul class="uu_time">
                     <li>
                         <div class="buyer_text">
                             <p>备注</p>
@@ -62,7 +55,28 @@
                 </ul>
             </div>
 
-            <span class="sp-btn" v-if="current == 4" @click="goOut">出库</span>
+            <span class="sp-btn" @click="goOut">入库</span>
+            <span class="sp-btn" @click="gofeedback">反馈订单</span>
+        </div>
+        <!-- 遮罩 -->
+        <div class="shade" v-show="isshade">
+            <div class="box" v-show="isbox">
+                <h4>打印标签</h4>
+                <input type="text" placeholder="请输入产品标号">
+                <span @click="confireChange">确定</span>
+            </div>
+
+            <!-- 标签 -->
+            <div class="tag" v-show="istag">
+                <p>
+                    打印步骤
+                </p>
+                <p> 选择条码->计数器;</p>
+                <p> 起始值：1</p>
+                <p>字首：http://caigou.pzhkj.cn/api/stock/getOrderInfo?order_id=xxxx&a=</p>
+                <p>字尾：end</p>
+                <span class="tag_btn">确定</span>
+            </div>
         </div>
     </div>
 </body>

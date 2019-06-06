@@ -6,61 +6,37 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>订单详情</title>
-    <link rel="stylesheet" href="css/KorderDetail.css">
+    <link rel="stylesheet" href="css/feedback.css">
     <link rel="stylesheet" href="css/base.css">
 </head>
 
 <body>
     <div id="app" v-cloak>
 
-        <div class="order">
-            <div class="order_wrap">
-                <p>{{cOrderDetail.product_name}}</p>
-                <p>{{cOrderDetail.qty}}个</p>
-            </div>
 
-            <div class="order_time">
-                <ul class="uu_time">
-                    <li>
-                        <span>尺寸</span>
-                        <span>{{cOrderDetail.delivery_at}}</span>
-                    </li>
-                    <li>
-                        <span>颜色</span>
-                        <span>{{cOrderDetail.remarks}}</span>
-                    </li>
-                    <li>
-                        <span>材质</span>
-                        <span>{{cOrderDetail.delivery_at}}</span>
-                    </li>
-                    <li>
-                        <span>入库时间</span>
-                        <span>{{cOrderDetail.delivery_at}}</span>
-                    </li>
-                    <li>
-                        <span>实际到货数量</span>
-                        <span>{{cOrderDetail.delivery_at}}</span>
-                    </li>
-                    <li>
-                        <span>产品标号</span>
-                        <span>WR324345</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="order_time">
-                <ul class="uu_time">
-                    <li>
-                        <div class="buyer_text">
-                            <p>备注</p>
-                            <textarea name="" id="Torder"></textarea>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <span class="sp-btn" v-if="current == 4" @click="goOut">出库</span>
+        <div class="order_time">
+            <ul class="uu_time">
+                <li>
+                    <span>问题类型</span>
+                    <select name="" id="slect">
+                        <option value="">次品退货</option>
+                        <option value="">货品缺少</option>
+                    </select>
+                </li>
+                <li>
+                    <span>退货/缺货数量</span>
+                    <input type="text" placeholder="请输入退货数量">
+                </li>
+                <li>
+                    <div class="buyer_text">
+                        <p>具体内容</p>
+                        <textarea name="" id="Torder"></textarea>
+                    </div>
+                </li>
+            </ul>
         </div>
+
+        <span class="sp-btn" @click="goOut">确定</span>
     </div>
 </body>
 
@@ -68,4 +44,4 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/vue.js"></script>
 <script src="js/api.js"></script>
-<script src="js/KorderDetail.js"></script>
+<script src="js/feedback.js"></script>
